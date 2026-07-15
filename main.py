@@ -9,7 +9,7 @@ Inputs:
 
 Outputs:
     - out_figs/ica.png: Topographic plot of all ICA components
-    - out_report/report_ica.html: QC report with component visualizations
+    - out_report/report.html: QC report with component visualizations
     - product.json: Metadata about the visualization
 """
 
@@ -71,8 +71,8 @@ report_html += f'<p><b>Method:</b> {ica.method}</p>'
 if hasattr(ica, 'random_state'):
     report_html += f'<p><b>Random State:</b> {ica.random_state}</p>'
 
-report.save(os.path.join('out_report', 'report_ica.html'), overwrite=True)
-print('Report saved to out_report/report_ica.html')
+report.save(os.path.join('out_report', 'report.html'), overwrite=True)
+print('Report saved to out_report/report.html')
 
 # == CREATE PRODUCT.JSON ==
 add_image_to_product(product_items, 'ICA Components', filepath=components_fig_path)
