@@ -71,7 +71,7 @@ report_html += f'<p><b>Method:</b> {ica.method}</p>'
 if hasattr(ica, 'random_state'):
     report_html += f'<p><b>Random State:</b> {ica.random_state}</p>'
 
-report.save(os.path.join('out_report', 'report.html'), overwrite=True)
+report.save(os.path.join('out_report', 'report.html'), overwrite=True, verbose=False)
 print('Report saved to out_report/report.html')
 
 # == CREATE PRODUCT.JSON ==
